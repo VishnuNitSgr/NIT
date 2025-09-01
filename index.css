@@ -24,7 +24,7 @@
   text-decoration: none;
   color: black;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 100;
 }
 
 .bx.bx-search {
@@ -79,3 +79,57 @@
   border-color: #0077b6;
   box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
 }
+
+
+/* Default (desktop / large screens) */
+/* Swiper container */
+.swiper {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* keeps a 16:9 ratio across all screens */
+  max-height: 80vh;       /* prevents it from being too tall */
+}
+
+/* Slides */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fill container, crop edges */
+  border-radius: 12px;    /* smooth corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle shadow */
+}
+
+/* --- Responsive Tweaks --- */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .swiper {
+    aspect-ratio: 21 / 9;   /* wider cinematic style */
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .swiper {
+    aspect-ratio: 4 / 3;    /* less wide for tablets */
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .swiper {
+    aspect-ratio: 1 / 1;    /* square style on small phones */
+    max-height: 60vh;
+  }
+
+  .swiper-slide img {
+    border-radius: 6px;     /* smaller rounding on mobiles */
+  }
+}
+

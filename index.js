@@ -14,3 +14,30 @@ searchBox.addEventListener('keydown',(enter)=>{
 
     }
 })
+
+// Wait until DOM + Swiper script loads
+document.addEventListener("DOMContentLoaded", () => {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Responsive settings
+    breakpoints: {
+      320: { slidesPerView: 1 },   // phones
+      768: { slidesPerView: 1 },   // tablets
+      1024: { slidesPerView: 1 },  // laptops
+      1440: { slidesPerView: 1 },  // big desktops
+    }
+  });
+});
