@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Institute{
+            text-align: center;
+        }
+        .Institute img{
+            width: 30%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .Institute img:hover{
+            cursor:pointer;
+            transform: scale(1.05);
+        }
+        .branch{
+            margin-top: 20px;
+            justify-content: center;
+            gap: 20px;
+            display: flex;
+
+           
+            flex-wrap: wrap;
+        }
+        .branch img{
+            width: 500px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .mechanical img:hover,
+        .civil img:hover,
+        .chemical img:hover,
+        .ece img:hover,
+        .ee img:hover{
+            cursor:pointer;
+            transform: scale(1.05);
+        }
+        .footer{
+            display: flex;
+            justify-content: space-around;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .footer .info, .footer .vision, .footer .quickLinks{
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+        .footer .info .address a, .footer .quickLinks a{
+            color: white;
+            text-decoration: none;
+        }
+        .footer .info .address a:hover, .footer .quickLinks a:hover{
+            text-decoration: underline;
+        }
+        .footer h2{
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        .footer .vision .content{
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .footer .quickLinks a{
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="Institute">
+        <h1 style="text-decoration: underline;">Institute Video Tour</h1>
+        <img src="4.avif" alt="nit">
+    </div>
+    <h1 style="text-decoration: underline; text-align: center;">Departmental Video</h1>
+    <div class="branch">
+        
+        <div class="mechanical">
+            <img src="MechanicalVideoGallery.jpg" alt="mechanical">
+        </div>
+        <div class="civil">
+            <img src="CivilVideoGallery.jpg" alt="mechanical">
+        </div>
+        <div class="chemical">
+            <img src="ChemicallVideoGallery.jpg" alt="mechanical">
+        </div>
+        <div class="ece">
+            <img src="EandCVideoGallery.jpg" alt="mechanical">
+        </div>
+        <div class="ee">
+            <img src="ElectricalVideoGallery.jpg" alt="mechanical">
+        </div>
+    </div>
+
+    
+     <footer class="footer">
+        <div class="info">
+            <div class="logo">
+                <img src="footer-logo.png" style="width: 200px; height: 50px; gap: 10px; background:none" alt="logo">
+            </div>
+            <div class="address">
+            <p>National Institute of Technology Srinagar<br>
+                Hazratbal, Srinagar - 190006, J&K, India<br>
+                Phone: +91-194-2414633, 2414634<br>
+                Fax: +91-194-2410043<br>
+                Email: <a href="mailto:zQ5aZ@example.com" style="color: white;">zQ5aZ@example.com</a><br>
+                Website: <a href="https://nitsri.ac.in" style="color: white;">https://nitsri.ac.in</a></p></div>
+        </div>
+        <div class="vision">
+            <h2>Vision</h2>
+            <div class="content">to be university globally trusted for technical excellence where learning and research integrate to sustain society and culture </div>
+        </div>
+        <div class="quickLinks">
+            <h2>Quicklinks</h2>
+            <a href="#">Internal complaint comittee</a>
+            <a href="video.html">Video tour</a>
+            <a href="#">Tenders </a>
+            <a href="nirf.html">NIRF</a>
+           
+        </div>
+       
+
+    </footer>
+    <script>
+        const img=document.querySelector('.Institute img');
+        img.addEventListener('click',()=>{
+            window.location.href='https://youtu.be/xEkUrqU3yCs?feature=shared';
+        })
+        const mechanical=document.querySelector('.mechanical img');
+        mechanical.addEventListener('click',()=>{
+            window.location.href='https://youtu.be/QRlbt3r3vlg?feature=shared';
+        })
+        const civil=document.querySelector('.civil img');
+        civil.addEventListener('click',()=>{
+            window.location.href='https://youtu.be/gITnk_n9MJ8?feature=shared';
+        })          
+
+        const chemical=document.querySelector('.chemical img');
+        chemical.addEventListener('click',()=>{ 
+            window.location.href='https://youtu.be/R5UFWNn2nYc?feature=shared';
+        })
+        const ece=document.querySelector('.ece img');
+        ece.addEventListener('click',()=>{
+            window.location.href='https://youtu.be/gYBt-KgX3cI?feature=shared';
+        })
+        const ee=document.querySelector('.ee img');
+        ee.addEventListener('click',()=>{
+            window.location.href='https://youtu.be/ukmx0s2HOIY?feature=shared';
+        })  
+    </script>
+</body>
+</html>
