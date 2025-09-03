@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-decoration:underline;
+            text-align:center;
+            margin-top:20px;
+            }
+            p{
+                text-align:center;
+                font-size:20px;
+                margin-top:20px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .name{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:1px;
+                align-items: center;
+                margin-top:20px;
+                
+            }
+            .name input{
+                width:50%;
+                height:80%;
+            }
+            .name label{
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+            .email{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:1px;
+                align-items: center;
+                margin-top:20px;
+                
+            }
+            .email input{
+                width:50%;
+                height:80%;
+            }
+            .email label{
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+            .person{
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                gap:1px;
+                align-items: center;
+                margin-top:20px;
+            }
+            .person input{
+                width:50%;
+                height:80%;
+            }
+            .person label{
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .date{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:1px;
+                align-items: center;
+                margin-top:20px;
+                
+            }
+            .date input{
+                width:50%;
+                height:80%;
+            }
+            .date label{
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+            .location{
+                display:flex;
+                flex-direction: column;             
+
+                justify-content: center;
+                gap:1px;                
+                align-items: center;
+                margin-top:20px;
+            }   
+            .location input{
+                width:50%;
+                height:80%;
+            }
+            .location label{            
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }   
+            .details {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               gap: 10px; 
+               align-items: center;
+               margin-top: 20px;
+            }
+
+            .details label {
+                font-size: 20px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .details textarea {
+                width: 49%;  
+                height: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                resize: vertical; 
+            }
+            .contact{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:1px;
+                align-items: center;
+                margin-top:20px;
+                
+            }
+            .contact input{
+                width:50%;
+                height:80%;
+            }
+            .contact label{
+                font-size:20px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+           
+              body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: #e3e7e0;
+                color: #333;
+              }
+               
+              
+
+            
+           
+    </style>
+
+</head>
+<body>
+    <h1 >Internal Complain Committee (ICC)</h1>
+    <p>The Internal Complaint Committee (ICC) is a mechanism for resolving internal disputes within the Institute.</p>
+    <div class="name">
+        <label for="name" >Your Name:</label>
+        <input type="text"id="name"placeholder="enter your name">
+
+    </div>
+    <div class="email">
+        <label for="email" >Your Email:</label>
+        <input type="email"id="Email"placeholder="enter your email please">
+
+    </div>
+   
+    <div class="person">
+        <label for="p" >Against Person(victim):</label>
+        <input type="text"id="pe"placeholder="enter the name of the person">
+
+    </div>
+    <div class="date">
+        <label for="dateIncident" >Date Incident:</label>
+        <input type="date"id="Email"placeholder="enter the date of incident">
+
+    </div>
+    <div class="location">
+        <label for="location-incident" >Location of the incident:</label>
+        <input type="text"id="loc"placeholder="enter the location of the incident">
+
+    </div>
+    <div class="contact">
+        <label for="con-no" >Contact Number:</label>
+        <input type="text"id="co"placeholder="enter your contact number">
+
+    </div>
+    <div class="details">
+    <label for="complaint">Complaint Details:</label>
+    <textarea id="complaint" placeholder="Write your complaint here..."></textarea>
+</div>
+<button class="btn" style="height: 20px; width: 80px; margin-left: 47%; margin-top: 20px; font-size: 15px; background-color: rgb(2, 2, 110); color: white; border-radius: 8px; border: none; cursor: pointer;">
+    submit
+
+</button>
+<script>
+    const myBtn=document.querySelector('.btn');
+    myBtn.addEventListener('click',()=>{
+        alert("your complaint has been registered successfully");
+    })
+</script>
+    
+</body>
+</html>

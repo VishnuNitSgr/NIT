@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Tenders Section Container */
+.tenders {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1100px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Heading */
+.tenders h2 {
+    text-align: center;
+    color: #002b5c;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Table Styling */
+.tenders table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+/* Header */
+.tenders th {
+    background-color: #002b5c;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Table Rows */
+.tenders td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Alternating row colors */
+.tenders tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+.tenders tr:hover {
+    background-color: #eef5ff;
+    transition: 0.2s ease;
+}
+
+/* Download links */
+.tenders a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tenders a:hover {
+    text-decoration: underline;
+}
+
+/* Status Badges */
+.tenders td:last-child {
+    font-weight: bold;
+}
+
+.tenders td:last-child:contains("Open") {
+    color: green;
+}
+
+.tenders td:last-child:contains("Closed") {
+    color: red;
+}
+
+    </style>
+</head>
+<body>
+    <section class="tenders">
+  <h2>Current Tenders</h2>
+  <table>
+    <tr>
+      <th>Tender Title</th>
+      <th>Tender No.</th>
+      <th>Issue Date</th>
+      <th>Last Date</th>
+      <th>Download</th>
+      <th>Status</th>
+    </tr>
+
+    <tr>
+      <td>Supply of Laboratory Equipment</td>
+      <td>NITSR/2025/Equip/01</td>
+      <td>01-Sep-2025</td>
+      <td>15-Sep-2025</td>
+      <td><a href="tender1.pdf" target="_blank">Download</a></td>
+      <td>Open</td>
+    </tr>
+
+    <tr>
+      <td>Annual Maintenance Contract for IT Services</td>
+      <td>NITSR/2025/IT/02</td>
+      <td>25-Aug-2025</td>
+      <td>10-Sep-2025</td>
+      <td><a href="tender2.pdf" target="_blank">Download</a></td>
+      <td>Closed</td>
+    </tr>
+
+    <tr>
+      <td>Cafeteria Services for Campus</td>
+      <td>NITSR/2025/Food/03</td>
+      <td>20-Aug-2025</td>
+      <td>05-Sep-2025</td>
+      <td><a href="tender3.pdf" target="_blank">Download</a></td>
+      <td>Open</td>
+    </tr>
+
+    <tr>
+      <td>Construction of New Research Block</td>
+      <td>NITSR/2025/Civil/04</td>
+      <td>10-Aug-2025</td>
+      <td>30-Sep-2025</td>
+      <td><a href="tender4.pdf" target="_blank">Download</a></td>
+      <td>Open</td>
+    </tr>
+
+    <tr>
+      <td>Supply of Office Furniture</td>
+      <td>NITSR/2025/Furn/05</td>
+      <td>05-Sep-2025</td>
+      <td>20-Sep-2025</td>
+      <td><a href="tender5.pdf" target="_blank">Download</a></td>
+      <td>Open</td>
+    </tr>
+
+    <tr>
+      <td>Campus Security Services</td>
+      <td>NITSR/2025/Security/06</td>
+      <td>01-Aug-2025</td>
+      <td>25-Aug-2025</td>
+      <td><a href="tender6.pdf" target="_blank">Download</a></td>
+      <td>Closed</td>
+    </tr>
+
+    <tr>
+      <td>Supply of Sports Equipment</td>
+      <td>NITSR/2025/Sports/07</td>
+      <td>28-Aug-2025</td>
+      <td>12-Sep-2025</td>
+      <td><a href="tender7.pdf" target="_blank">Download</a></td>
+      <td>Open</td>
+    </tr>
+
+    <tr>
+      <td>Renovation of Hostel Block</td>
+      <td>NITSR/2025/Civil/08</td>
+      <td>15-Jul-2025</td>
+      <td>31-Aug-2025</td>
+      <td><a href="tender8.pdf" target="_blank">Download</a></td>
+      <td>Closed</td>
+    </tr>
+
+  </table>
+</section>
+
+</body>
+</html>

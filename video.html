@@ -1,160 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .Institute{
-            text-align: center;
-        }
-        .Institute img{
-            width: 30%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .Institute img:hover{
-            cursor:pointer;
-            transform: scale(1.05);
-        }
-        .branch{
-            margin-top: 20px;
-            justify-content: center;
-            gap: 20px;
-            display: flex;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Gallery</title>
+  <style>
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: #222;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-           
-            flex-wrap: wrap;
-        }
-        .branch img{
-            width: 500px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        .mechanical img:hover,
-        .civil img:hover,
-        .chemical img:hover,
-        .ece img:hover,
-        .ee img:hover{
-            cursor:pointer;
-            transform: scale(1.05);
-        }
-        .footer{
-            display: flex;
-            justify-content: space-around;
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
-        .footer .info, .footer .vision, .footer .quickLinks{
-            flex: 1;
-            margin: 10px;
-            min-width: 250px;
-        }
-        .footer .info .address a, .footer .quickLinks a{
-            color: white;
-            text-decoration: none;
-        }
-        .footer .info .address a:hover, .footer .quickLinks a:hover{
-            text-decoration: underline;
-        }
-        .footer h2{
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-        }
-        .footer .vision .content{
-            margin-top: 10px;
-            font-style: italic;
-        }
-        .footer .quickLinks a{
-            display: block;
-            margin: 5px 0;
-        }
-    </style>
+
+h1 {
+  text-align: center;
+  margin: 50px 0 30px;
+  font-size: 2.5rem;
+  color: #0d47a1;
+  font-weight: 700;
+  position: relative;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d47a1, #42a5f5);
+  margin: 12px auto 0;
+  border-radius: 3px;
+  animation: expandLine 1s ease forwards;
+}
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 100px; }
+}
+
+/* Institute Section */
+.Institute {
+  text-align: center;
+  margin: 40px 0;
+}
+.Institute img {
+  width: 35%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+.Institute img:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 30px 60px rgba(13, 71, 161, 0.5);
+  cursor: pointer;
+}
+
+
+.branch {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  padding: 0 25px;
+}
+.branch img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.branch img:hover {
+  transform: translateY(-12px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(66, 165, 245, 0.4);
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(135deg, #0d47a1, #1a237e);
+  color: white;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.footer .info,
+.footer .vision,
+.footer .quickLinks {
+  flex: 1;
+  margin: 15px;
+  min-width: 250px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+.footer .info:hover,
+.footer .vision:hover,
+.footer .quickLinks:hover {
+  transform: translateY(-10px);
+}
+.footer h2 {
+  border-bottom: 2px solid #64b5f6;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.footer .quickLinks a {
+  display: block;
+  margin: 8px 0;
+  color: #bbdefb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.footer .quickLinks a:hover {
+  color: #fff;
+  transform: translateX(6px);
+}
+.footer .vision .content {
+  margin-top: 10px;
+  font-style: italic;
+  color: #e3f2fd;
+}
+
+/* Video Popup */
+.video-popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+.video-content {
+  position: relative;
+  width: 85%;
+  max-width: 900px;
+  background: #000;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 12px 35px rgba(0,0,0,0.6);
+  animation: zoomIn 0.4s ease;
+}
+.close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #f44336;
+  color: white;
+  font-size: 26px;
+  border-radius: 50%;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.close:hover {
+  background: #b71c1c;
+}
+iframe {
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { background: rgba(0,0,0,0); }
+  to { background: rgba(0,0,0,0.85); }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+  </style>
 </head>
 <body>
-    <div class="Institute">
-        <h1 style="text-decoration: underline;">Institute Video Tour</h1>
-        <img src="4.avif" alt="nit">
+  <div class="Institute">
+    <h1>Institute Video Tour</h1>
+    <img src="4.avif" alt="nit" data-video="https://www.youtube.com/embed/xEkUrqU3yCs">
+  </div>
+
+  <h1>Departmental Video</h1>
+  <div class="branch">
+    <img src="MechanicalVideoGallery.jpg" alt="Mechanical" data-video="https://www.youtube.com/embed/QRlbt3r3vlg">
+    <img src="CivilVideoGallery.jpg" alt="Civil" data-video="https://www.youtube.com/embed/gITnk_n9MJ8">
+    <img src="ChemicallVideoGallery.jpg" alt="Chemical" data-video="https://www.youtube.com/embed/R5UFWNn2nYc">
+    <img src="EandCVideoGallery.jpg" alt="ECE" data-video="https://www.youtube.com/embed/gYBt-KgX3cI">
+    <img src="ElectricalVideoGallery.jpg" alt="EE" data-video="https://www.youtube.com/embed/ukmx0s2HOIY">
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="info">
+      <div class="logo">
+        <img src="footer-logo.png" style="width: 200px; height: 50px; background:none" alt="logo">
+      </div>
+      <div class="address">
+        <p>National Institute of Technology Srinagar<br>
+          Hazratbal, Srinagar - 190006, J&K, India<br>
+          Phone: +91-194-2414633, 2414634<br>
+          Fax: +91-194-2410043<br>
+          Email: <a href="mailto:zQ5aZ@example.com">zQ5aZ@example.com</a><br>
+          Website: <a href="https://nitsri.ac.in">https://nitsri.ac.in</a></p>
+      </div>
     </div>
-    <h1 style="text-decoration: underline; text-align: center;">Departmental Video</h1>
-    <div class="branch">
-        
-        <div class="mechanical">
-            <img src="MechanicalVideoGallery.jpg" alt="mechanical">
-        </div>
-        <div class="civil">
-            <img src="CivilVideoGallery.jpg" alt="mechanical">
-        </div>
-        <div class="chemical">
-            <img src="ChemicallVideoGallery.jpg" alt="mechanical">
-        </div>
-        <div class="ece">
-            <img src="EandCVideoGallery.jpg" alt="mechanical">
-        </div>
-        <div class="ee">
-            <img src="ElectricalVideoGallery.jpg" alt="mechanical">
-        </div>
+    <div class="vision">
+      <h2>Vision</h2>
+      <div class="content">To be a university globally trusted for technical excellence where learning and research integrate to sustain society and culture</div>
     </div>
+    <div class="quickLinks">
+      <h2>Quicklinks</h2>
+      <a href="internal_complaint_form.html">Internal complaint committee</a>
+      <a href="video.html">Video tour</a>
+      <a href="tender.html">Tenders</a>
+      <a href="nirf.html">NIRF</a>
+    </div>
+  </footer>
 
-    
-     <footer class="footer">
-        <div class="info">
-            <div class="logo">
-                <img src="footer-logo.png" style="width: 200px; height: 50px; gap: 10px; background:none" alt="logo">
-            </div>
-            <div class="address">
-            <p>National Institute of Technology Srinagar<br>
-                Hazratbal, Srinagar - 190006, J&K, India<br>
-                Phone: +91-194-2414633, 2414634<br>
-                Fax: +91-194-2410043<br>
-                Email: <a href="mailto:zQ5aZ@example.com" style="color: white;">zQ5aZ@example.com</a><br>
-                Website: <a href="https://nitsri.ac.in" style="color: white;">https://nitsri.ac.in</a></p></div>
-        </div>
-        <div class="vision">
-            <h2>Vision</h2>
-            <div class="content">to be university globally trusted for technical excellence where learning and research integrate to sustain society and culture </div>
-        </div>
-        <div class="quickLinks">
-            <h2>Quicklinks</h2>
-            <a href="#">Internal complaint comittee</a>
-            <a href="video.html">Video tour</a>
-            <a href="#">Tenders </a>
-            <a href="nirf.html">NIRF</a>
-           
-        </div>
-       
+  <!-- Popup -->
+  <div class="video-popup" id="videoPopup">
+    <div class="video-content">
+      <span class="close" id="closePopup">&times;</span>
+      <iframe id="youtubeVideo" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
 
-    </footer>
-    <script>
-        const img=document.querySelector('.Institute img');
-        img.addEventListener('click',()=>{
-            window.location.href='https://youtu.be/xEkUrqU3yCs?feature=shared';
-        })
-        const mechanical=document.querySelector('.mechanical img');
-        mechanical.addEventListener('click',()=>{
-            window.location.href='https://youtu.be/QRlbt3r3vlg?feature=shared';
-        })
-        const civil=document.querySelector('.civil img');
-        civil.addEventListener('click',()=>{
-            window.location.href='https://youtu.be/gITnk_n9MJ8?feature=shared';
-        })          
+  <script>
+    const popup = document.getElementById('videoPopup');
+    const youtubeVideo = document.getElementById('youtubeVideo');
+    const closeBtn = document.getElementById('closePopup');
 
-        const chemical=document.querySelector('.chemical img');
-        chemical.addEventListener('click',()=>{ 
-            window.location.href='https://youtu.be/R5UFWNn2nYc?feature=shared';
-        })
-        const ece=document.querySelector('.ece img');
-        ece.addEventListener('click',()=>{
-            window.location.href='https://youtu.be/gYBt-KgX3cI?feature=shared';
-        })
-        const ee=document.querySelector('.ee img');
-        ee.addEventListener('click',()=>{
-            window.location.href='https://youtu.be/ukmx0s2HOIY?feature=shared';
-        })  
-    </script>
+    // Handle clicks on all images with data-video attribute
+    document.querySelectorAll('img[data-video]').forEach(img => {
+      img.addEventListener('click', () => {
+        youtubeVideo.src = img.dataset.video + "?autoplay=1";
+        popup.style.display = 'flex';
+      });
+    });
+
+    // Close popup
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      youtubeVideo.src = "";
+    });
+
+    // Close when clicking outside
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+        youtubeVideo.src = "";
+      }
+    });
+  </script>
 </body>
 </html>
