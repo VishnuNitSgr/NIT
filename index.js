@@ -1,43 +1,54 @@
-const searchLogo=document.getElementById('search-icon');  
-const searchBox=document.getElementById('search-box');
-searchLogo.addEventListener('click',()=>{
-    searchBox.classList.toggle('active');
-    if (searchBox.classList.contains("active")) {
-    searchBox.focus();
+const searchLogo = document.getElementById("search-icon");
+const searchBox = document.getElementById("search-box");
+
+const searchPages = {
+  "about": "about.html",
+  "students": "students.html",
+  "staffs": "staff.html",
+  "sitemap": "sitemap.html",
+  "contact": "contact.html",
+  "library": "library.html",
+  "syllabus": "syllabus.html",
+  "director": "director.html",
+  "dean": "dean.html",
+  "registrar": "registrar.html",
+  "senate": "senate.html",
+  "cse": "cse.html",
+  "it": "it.html",
+  "ece": "ece.html",
+  "ee": "ee.html",
+  "mec": "mec.html",
+  "che": "che.html",
+  "civ": "civ.html",
+  "mme": "mme.html"
+};
+
+function performSearch() {
+  const query = searchBox.value.toLowerCase().trim();
+  if (query && searchPages[query]) {
+    window.location.href = searchPages[query];
+  } else if (query) {
+    alert("No result found. Please enter correct search");
   }
-  
-})
-searchBox.addEventListener('keydown',(enter)=>{
-    if(enter.key==='Enter'){
-        searchBox.classList.remove('active');
-         searchBox.value = ""; 
+}
 
-    }
-})
+// 🔍 icon click
+searchLogo.addEventListener("click", () => {
+  if (!searchBox.classList.contains("active")) {
+    // first click → open box
+    searchBox.classList.add("active");
+    searchBox.focus();
+  } else {
+    // second click → run search
+    performSearch();
+  }
+});
 
-// Wait until DOM + Swiper script loads
-document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // Responsive settings
-    breakpoints: {
-      320: { slidesPerView: 1 },   // phones
-      768: { slidesPerView: 1 },   // tablets
-      1024: { slidesPerView: 1 },  // laptops
-      1440: { slidesPerView: 1 },  // big desktops
-    }
-  });
+// Enter key press
+searchBox.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    performSearch();
+    searchBox.classList.remove("active");
+    searchBox.value = ""; // clear after search
+  }
 });
