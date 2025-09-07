@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #sitemap {
+/* Nested lists hidden by default */
+
+
+#sitemap {
     max-width: 900px;
     margin: 50px auto;
-    padding: 30px;
-    background-color: #fefefe;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    font-family: 'Arial', sans-serif;
+    padding: 40px;
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sitemap:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 #sitemap h2 {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 25px;
-    color: #222;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #0d47a1;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+#sitemap h2::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: #0d47a1;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .sitemap-list {
@@ -28,43 +49,95 @@
 }
 
 .sitemap-list li {
-    margin: 8px 0;
+    margin: 12px 0;
     font-size: 18px;
+    position: relative;
+    transition: background 0.3s;
 }
 
 .sitemap-list a {
     text-decoration: none;
-    color: #0073e6;
-    transition: color 0.3s;
+    color: #0d47a1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .sitemap-list a:hover {
-    color: #005bb5;
+    color: #ffffff;
+    background: linear-gradient(90deg, #2196f3, #1e88e5);
+    box-shadow: 0 6px 15px rgba(33,150,243,0.4);
 }
 
-/* Nested lists (hidden by default) */
+/* Nested lists hidden by default */
 .nested {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
     margin-left: 20px;
+    border-left: 2px dashed #0d47a1;
+    padding-left: 15px;
 }
 
+/* Show nested lists */
+.nested.show {
+    opacity: 1;
+    max-height: 2000px; /* Enough to show content */
+}
+
+/* Collapsible arrow */
 .collapsible {
     cursor: pointer;
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px;
+    font-weight: 600;
+    color: #0d47a1;
+    transition: color 0.3s ease;
+}
+
+.collapsible:hover {
+    color: #2196f3;
 }
 
 .collapsible::before {
     content: "▸";
     position: absolute;
     left: 0;
-    color: #0073e6;
-    transition: transform 0.3s;
+    top: 2px;
+    color: #0d47a1;
+    font-weight: bold;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .collapsible.active::before {
     transform: rotate(90deg);
+    color: #1e88e5;
 }
+
+/* Sub-level icons */
+.sitemap-list > li > a::before {
+    content: "📄";
+    margin-right: 8px;
+}
+
+.nested > li > a::before {
+    content: "📌";
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+/* Sub-program gradient background */
+.nested > li > a {
+    background: rgba(33, 150, 243, 0.05);
+    border-radius: 6px;
+}
+.nested > li > a:hover {
+    background: linear-gradient(90deg, #64b5f6, #42a5f5);
+    color: #fff;
+}
+
 
     </style>
 </head>
@@ -127,17 +200,21 @@
   </ul>
 </section>
 <script>
+// Select all collapsible items
 const collapsibles = document.querySelectorAll(".collapsible");
 
 collapsibles.forEach(item => {
     item.addEventListener("click", () => {
         item.classList.toggle("active");
-        const nested = item.querySelector(".nested");
-        if (nested) {
-            nested.style.display = nested.style.display === "block" ? "none" : "block";
-        }
+        const nestedLists = item.querySelectorAll(".nested");
+        nestedLists.forEach(nested => {
+            nested.classList.toggle("show");
+        });
     });
 });
+
+
+
 
 </script>
 
