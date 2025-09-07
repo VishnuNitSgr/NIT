@@ -266,3 +266,97 @@
     gap: 10px;
   }
 }
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+nav > a,
+.academic > a {
+  text-decoration: none;
+  color: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+nav > a:hover,
+.academic > a:hover { background: #f2f2f2; }
+
+/* --- Academic main dropdown --- */
+.academic { position: relative; display: inline-block; }
+.academic-content {
+  /* hidden by default; shown on hover below */
+  display: none;
+  position: absolute;
+  top: 100%;            /* open below "Academic" */
+  left: 0;
+  background: #fff;
+  min-width: 240px;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  z-index: 1000;
+  white-space: nowrap;  /* keep nice widths for nested items */
+}
+.academic:hover > .academic-content { display: block; }
+
+/* --- Links inside dropdown --- */
+.academic-content > a,
+.program-content > a,
+.departments-content > a {
+  display: block;
+  padding: 10px 14px;
+  color: #222;
+  text-decoration: none;
+}
+.academic-content > a:hover,
+.program-content > a:hover,
+.departments-content > a:hover {
+  background: #f5f5f5;
+}
+
+/* --- Submenus (Programs / Departments) --- */
+.programs,
+.departments {
+  position: relative;    /* anchor for their submenus */
+}
+
+.program-content,
+.departments-content {
+  display: none;         /* hidden by default */
+  position: absolute;
+  top: 0;
+  left: 100%;            /* open to the right of parent */
+  min-width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  padding: 6px 0;
+  z-index: 1100;
+}
+
+/* Avoid hover gap: slight overlap with parent so pointer never leaves */
+.program-content,
+.departments-content { margin-left: -2px; }
+
+.programs:hover > .program-content,
+.departments:hover > .departments-content {
+  display: block;
+}
+
+/* Optional caret indicator */
+.caret { float: right; opacity: 0.6; }
+.programs,
+.departments {
+  position: relative;
+  margin-bottom: 10px; /* adds vertical gap */
+}
+.programs,
+.departments {
+  position: relative;
+  margin-bottom: 10px; /* adds vertical gap */
+}

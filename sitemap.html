@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sitemap {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#sitemap h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.sitemap-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sitemap-list li {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.sitemap-list a {
+    text-decoration: none;
+    color: #0073e6;
+    transition: color 0.3s;
+}
+
+.sitemap-list a:hover {
+    color: #005bb5;
+}
+
+/* Nested lists (hidden by default) */
+.nested {
+    display: none;
+    margin-left: 20px;
+}
+
+.collapsible {
+    cursor: pointer;
+    position: relative;
+    padding-left: 20px;
+}
+
+.collapsible::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #0073e6;
+    transition: transform 0.3s;
+}
+
+.collapsible.active::before {
+    transform: rotate(90deg);
+}
+
+    </style>
+</head>
+<body>
+    <section id="sitemap">
+  <h2>Website Sitemap</h2>
+  
+  <ul class="sitemap-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+
+    <li class="collapsible">Administration
+      <ul class="nested">
+        <li><a href="director.html">Director</a></li>
+        <li><a href="dean.html">Dean</a></li>
+        <li><a href="registrar.html">Registrar</a></li>
+        <li><a href="senate.html">Senate</a></li>
+      </ul>
+    </li>
+
+    <li class="collapsible">Academic
+      <ul class="nested">
+        <li class="collapsible">Programs
+          <ul class="nested">
+            <li><a href="Undergraduate.html">Undergraduate</a></li>
+            <li><a href="Postgraduate.html">Postgraduate</a></li>
+            <li><a href="Doctoral.html">Doctoral</a></li>
+          </ul>
+        </li>
+        <li class="collapsible">Departments
+          <ul class="nested">
+            <li><a href="cse.html">CSE</a></li>
+            <li><a href="it.html">IT</a></li>
+            <li><a href="ece.html">ECE</a></li>
+            <li><a href="ee.html">EE</a></li>
+            <li><a href="mec.html">MEC</a></li>
+            <li><a href="che.html">CHE</a></li>
+            <li><a href="civ.html">CIV</a></li>
+            <li><a href="mme.html">MME</a></li>
+          </ul>
+        </li>
+        <li><a href="https://nitsri.ac.in/uploaded_files/Academic_calender2025-2026-10-07-25.pdf" target="_blank">Academic Calendar</a></li>
+        <li><a href="syllabus.html">Syllabus</a></li>
+        <li><a href="library.html">Library & Research</a></li>
+      </ul>
+    </li>
+
+    <li><a target="_blank" href="students.html">Students Webmail</a></li>
+    <li><a href="staff.html">Staffs Webmail</a></li>
+    <li><a href="contact.html">Contact</a></li>
+
+    <li class="collapsible">Footer Quicklinks
+      <ul class="nested">
+        <li><a href="internal_complaint_form.html">Internal Complaint Committee</a></li>
+        <li><a href="video.html">Video Tour</a></li>
+        <li><a href="tender.html">Tenders</a></li>
+        <li><a href="nirf.html">NIRF</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<script>
+const collapsibles = document.querySelectorAll(".collapsible");
+
+collapsibles.forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+        const nested = item.querySelector(".nested");
+        if (nested) {
+            nested.style.display = nested.style.display === "block" ? "none" : "block";
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>

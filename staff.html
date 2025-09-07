@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #staff-webmail {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#staff-webmail input {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#staff-webmail button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0073e6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#staff-webmail button:hover {
+    background-color: #005bb5;
+}
+
+    </style>
+</head>
+<body>
+ <section id="staff-webmail">
+  <h2>Staff Webmail Portal</h2>
+  <p>Enter your staff ID to access your webmail:</p>
+  <input type="text" id="staffId" placeholder="Enter Staff ID">
+  <button onclick="openWebmail()">Go to Webmail</button>
+  <p id="error-msg" style="color:red; display:none;">Please enter your ID</p>
+</section>
+<script>
+    function openWebmail() {
+    const staffId = document.getElementById('staffId').value.trim();
+    const errorMsg = document.getElementById('error-msg');
+
+    if (staffId === "") {
+        errorMsg.style.display = "block";
+        return;
+    }
+    errorMsg.style.display = "none";
+
+    // Change this base URL to your college webmail portal
+    const webmailURL = `https://webmail.college.edu/${staffId}`;
+    
+    // Open in a new tab
+    window.open(webmailURL, "_blank");
+}
+
+</script>
+</body>
+</html>

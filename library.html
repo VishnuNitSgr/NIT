@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <style>
+    /* Slider container */
+    .swiper {
+      width: 90%;
+      max-width: 1000px;
+      height: 400px;
+      margin: 40px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Slides */
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #004080;
+    }
+
+    /* Pagination bullets */
+    .swiper-pagination-bullet {
+      background: #004080;
+      opacity: 0.8;
+    }
+    .swiper-pagination-bullet-active {
+      background: #ff6600;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .swiper {
+        height: 250px;
+      }
+    }
+/* Main container */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+/* First content block */
+.content1 p {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  text-align: justify;
+  letter-spacing: 0.3px;
+}
+
+/* LIRC image */
+.lirc {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.lirc img {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for image */
+.lirc img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Second content block */
+.content2 {
+  background: #f0f4f8;
+  padding: 25px 30px;
+  border-left: 6px solid #1d4e89;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-top: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  text-align: justify;
+}
+
+/* Highlight important text */
+.content2 strong {
+  color: #1d4e89;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* Blockquotes or notices (optional) */
+.content2 p.notice {
+  background: #e1f0ff;
+  padding: 15px 20px;
+  border-left: 5px solid #1d4e89;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .lirc img {
+    max-width: 100%;
+  }
+  .content2 {
+    padding: 20px;
+    font-size: 0.98rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    margin: 30px auto;
+  }
+  .content1 p {
+    font-size: 1rem;
+  }
+  .content2 {
+    font-size: 0.95rem;
+    padding: 18px 20px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Swiper Slider -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="3258.jpg" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="3262.jpg" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="3396.jpg" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="3397.jpg" alt="Slide 4"></div>
+      <div class="swiper-slide"><img src="3398.jpg" alt="Slide 5"></div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <main>
+    <div class="content1">
+    <p>The history of LIRC dates back to 1960 with the inception of National Institute of Technology. NIT Srinagar Library supports Teaching, Research & and other related programmes of the Institute. The Library has a good collection of a 74769 documents that comprises of Books, Journals, Thesis, Video cassettes, Learning Resources (LRs) & Compact discs in the field of Engineering, Science, Management, Literature & Humanities.</p>
+    <div class="lirc">
+        <img src="download-1.png" ;" alt="lirc">
+    </div>
+    <div class="content2">
+        LIRC tries its best to cope up with the demands of the patrons by adapting to new technologies in field of library and information management. The Library has computerized data of its book collection and of the patrons that avail services of LIRC. Koha, open-source software is deployed on the Libraries Intra-Net. The book collection and patron data is available on Koha. The RFID technology is also implemented in the Library. Automated Book Check-in/Check-out Kiosk's are placed throughout the library along with OPAC Kiosk's. Koha and RFID framework are supported by Linux, Apache, Maira-DB & Perl technologies. Linux and Windows servers are also used. LIRC also houses a browsing centre where patrons can browse online resources using LIRC's wired or Wireless (Wi-Fi) network. Microsoft’s Active Directory Services is an upcoming project for the patrons of LIRC. LIRC has extended the services beyond the physical walls of a building, by including material accessible by electronic means & by developing a modernized e-resource library with a variety of E-Journals and e-Databases. The Library distinguishes itself by providing Remote Access Facility (RAF) to all the subscribed electronic journals and journals accessible via e-Shodhsindhu consortium. 
+
+Anti Plagiarism Policy: LIRC has subscription to both Turnitin and Urkund, web-based similarity detection services to help the researchers in making high quality plagiarism free research contents.
+    </div>
+    </div>
+  </main>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+</body>
+</html>

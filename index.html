@@ -1,103 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-    <!-- /•header• -->
-<header class="header">
+  <!-- Header -->
+  <header class="header">
     <div class="logo">
-        <img src="nit-logo.png " alt="logo">
+      <img src="nit-logo.png" alt="logo">
     </div>
     <nav class="navbar1">
-        <a target="blank" href="students-Webmail">Students-Webmail</a>
-        <a href="staffs-Webmail">Staffs-Webmail</a>
-        <a href="sitemap">Sitemap</a>
-        <div class="search-container">
-            <i class="bx bx-search" id="search-icon"></i>
-            <input type="text" id="search-box" placeholder="Search...">
-        </div>
-       
-
-       
+      <a target="_blank" href="students.html">Students-Webmail</a>
+      <a href="staff.html">Staffs-Webmail</a>
+      <a href="sitemap.html">Sitemap</a>
+      <div class="search-container">
+        <i class="bx bx-search" id="search-icon"></i>
+        <input type="text" id="search-box" placeholder="Search...">
+      </div>
     </nav>
-   
-</header>
-<!-- white navbar -->
-<nav class="navbar2">
-        <a href="http://127.0.0.1:5500/about.html">About Us</a>
-        <div class="dropdown">
-             <a href="#" style="margin-top: 20px;">Administration</a>
-             <div class="dropdown-content">
-                 <a href="director.html">Director</a>
-                 <a href="dean.html">Dean</a>
-                 <a href="registrar.html">Registrar</a>
-                 <a href="senate.html">Senate</a>
-             </div>
+  </header>
 
+  <!-- White navbar -->
+  <nav class="navbar2">
+    <a href="about.html">About Us</a>
+
+    <div class="dropdown">
+      <a href="#">Administration</a>
+      <div class="dropdown-content">
+        <a href="director.html">Director</a>
+        <a href="dean.html">Dean</a>
+        <a href="registrar.html">Registrar</a>
+        <a href="senate.html">Senate</a>
+      </div>
+    </div>
+
+    <!-- Academic dropdown -->
+    <div class="academic">
+      <a href="#">Academic</a>
+      <div class="academic-content">
+        <div class="programs">
+          <a href="#">Programs <span class="caret">▸</span></a>
+          <div class="program-content">
+            <a href="Undergraduate.html">Undergraduate</a>
+            <a href="Postgraduate.html">Postgraduate</a>
+            <a href="Doctoral.html">Doctoral</a>
+          </div>
         </div>
-       
-        <a href="#">Academic</a>
-        <a href="#">Admission</a>
-        <a href="#">Departments / Centres</a>
-        <a href="#">Contact</a>
-    </nav>
- <script src="index.js"></script>
 
- <!-- main section -->
-   <section class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="1.avif" alt="Slide 1"></div>
-    <div class="swiper-slide"><img src="2.avif" alt="Slide 2"></div>
-    <div class="swiper-slide"><img src="3.avif" alt="Slide 3"></div>
-    <div class="swiper-slide"><img src="4.avif" alt="Slide 4"></div>
-    <div class="swiper-slide"><img src="5.avif" alt="Slide 5"></div>
-  </div>
-  
-  <!-- Optional navigation -->
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</section>
-
-
-
-   <!-- linking swiper script -->
-   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-   <!-- yaha se footer start krenge -->
-    <footer class="footer">
-        <div class="info">
-            <div class="logo">
-                <img src="footer-logo.png" style="width: 200px; height: 50px; gap: 10px; background:none" alt="logo">
-            </div>
-            <div class="address">
-            <p>National Institute of Technology Srinagar<br>
-                Hazratbal, Srinagar - 190006, J&K, India<br>
-                Phone: +91-194-2414633, 2414634<br>
-                Fax: +91-194-2410043<br>
-                Email: <a href="mailto:zQ5aZ@example.com" style="color: white;">zQ5aZ@example.com</a><br>
-                Website: <a href="https://nitsri.ac.in" style="color: white;">https://nitsri.ac.in</a></p></div>
+        <div class="departments">
+          <a href="#">Departments <span class="caret">▸</span></a>
+          <div class="departments-content">
+            <a href="cse.html">CSE</a>
+            <a href="it.html">IT</a>
+            <a href="ece.html">ECE</a>
+            <a href="ee.html">EE</a>
+            <a href="mec.html">MEC</a>
+            <a href="che.html">CHE</a>
+            <a href="civ.html">CIV</a>
+            <a href="mme.html">MME</a>
+          </div>
         </div>
-        <div class="vision">
-            <h2>Vision</h2>
-            <div class="content">To be university globally trusted for technical excellence where learning and research integrate to sustain society and culture </div>
-        </div>
-        <div class="quickLinks">
-            <h2>Quicklinks</h2>
-            <a href="internal_complaint_form.html">Internal complaint comittee</a>
-            <a href="video.html">Video tour</a>
-            <a href="tender.html">Tenders </a>
-            <a href="nirf.html">NIRF</a>
-           
-        </div>
-       
 
-    </footer>
+        <a href="https://nitsri.ac.in/uploaded_files/Academic_calender2025-2026-10-07-25.pdf" target="_blank">
+        Academic Calendar
+        </a>
+
+        <a href="syllabus.html">Syllabus</a>
+        <a href="library.html">Library & Research</a>
+      </div>
+    </div>
+
+    <!-- <a href="#">Admission</a> -->
+
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Slider -->
+  <section class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="1.avif" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="2.avif" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="3.avif" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="4.avif" alt="Slide 4"></div>
+      <div class="swiper-slide"><img src="5.avif" alt="Slide 5"></div>
+    </div>
+
+    <!-- Optional navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </section>
+
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="info">
+      <div class="logo">
+        <img src="footer-logo.png" style="width: 200px; height: 50px; background:none" alt="logo">
+      </div>
+      <div class="address">
+        <p>
+          National Institute of Technology Srinagar<br>
+          Hazratbal, Srinagar - 190006, J&K, India<br>
+          Phone: +91-194-2414633, 2414634<br>
+          Fax: +91-194-2410043<br>
+          Email: <a href="mailto:zQ5aZ@example.com" style="color: white;">zQ5aZ@example.com</a><br>
+          Website: <a href="https://nitsri.ac.in" style="color: white;">https://nitsri.ac.in</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="vision">
+      <h2>Vision</h2>
+      <div class="content">
+        To be university globally trusted for technical excellence where learning and research integrate to sustain society and culture
+      </div>
+    </div>
+
+    <div class="quickLinks">
+      <h2>Quicklinks</h2>
+      <a href="internal_complaint_form.html">Internal Complaint Committee</a>
+      <a href="video.html">Video Tour</a>
+      <a href="tender.html">Tenders</a>
+      <a href="nirf.html">NIRF</a>
+    </div>
+  </footer>
 </body>
 </html>
